@@ -277,7 +277,7 @@ class User(object):
         if module.params['expires']:
             try:
                 self.expires = time.gmtime(module.params['expires'])
-            except Exception,e:
+            except Exception as e:
                 module.fail_json("Invalid expires time %s: %s" %(self.expires, str(e)))
 
         if module.params['ssh_key_file'] is not None:
